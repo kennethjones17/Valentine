@@ -1,3 +1,6 @@
+/* Import cute Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+
 body {
     display: flex;
     flex-direction: column;
@@ -5,53 +8,76 @@ body {
     justify-content: center;
     height: 100vh;
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow: hidden;
     margin: 0;
 }
 
-.wrapper {
-    position: relative;
-    width: 90%; /* Make it adapt to screen size */
-    max-width: 400px; /* Prevent it from being too large */
-}
-
+/* Cute text styling */
 .question {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Pacifico', cursive;
     margin-bottom: 20px;
 }
 
+/* Style the buttons */
 .yes-btn, .no-btn {
-    padding: 12px 24px;
+    padding: 14px 30px;
     font-size: 1.2rem;
-    border-radius: 10px;
+    font-weight: bold;
+    border-radius: 50px;
     cursor: pointer;
     border: none;
-    transition: transform 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Cute Yes Button */
 .yes-btn {
-    background-color: #ff4d4d;
+    background-color: #ff4d88;
     color: white;
+    border: 2px solid white;
 }
 
+.yes-btn:hover {
+    background-color: #ff1a66;
+    transform: scale(1.1);
+}
+
+/* Funny No Button */
 .no-btn {
-    background-color: #4d4dff;
-    color: white;
+    background-color: #ffcccb;
+    color: #d10000;
     position: absolute;
+    border: 2px solid #d10000;
 }
 
-.yes-btn:active, .no-btn:active {
-    transform: scale(0.9);
+.no-btn:hover {
+    transform: scale(1.1);
 }
 
-/* Mobile-specific styles */
-@media (max-width: 480px) {
-    .yes-btn, .no-btn {
-        font-size: 1rem;
-        padding: 10px 20px;
+/* Hearts floating effect */
+@keyframes floating-hearts {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
     }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
 
-    .question {
-        font-size: 1.2rem;
-    }
+/* Create multiple floating hearts */
+.heart {
+    position: absolute;
+    bottom: -10px;
+    color: #ff4d88;
+    font-size: 20px;
+    opacity: 0.7;
+    animation: floating-hearts 5s infinite ease-in-out;
 }
